@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <button onclick="myFunction()" id="mybtn"> Show </button>
+      <div id="myLinks">
+        <p><a href="#news">News</a></p>
+        <p><a href="#contact">Contact</a></p>
+        <p><a href="#about">About</a></p>
+        <p><a href="#news">News</a></p>
+        <p><a href="#contact">Contact</a></p>
+        <p><a href="#about">About</a></p>
+        <p><a href="#news">News</a></p>
+        <p><a href="#contact">Contact</a></p>
+        <p><a href="#about">About</a></p>
+        <p><a href="#news">News</a></p>
+        <p><a href="#contact">Contact</a></p>
+        <p><a href="#about">About</a></p>
+      </div>
+      
+<script>
+        function myFunction() {
+          let x = document.getElementById("myLinks");
+          let btnText = document.getElementById("mybtn");
+          if (x.style.display === "block") {
+            btnText.innerHTML = " Show";
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+            btnText.innerHTML = "Hide"; 
+          }
+        }
+</script>
+
+
+</body>
+</html>
