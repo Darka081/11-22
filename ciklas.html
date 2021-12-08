@@ -157,20 +157,64 @@
     //     } 
     //     console.log( x )
 
-    19
-        let n = 123456789; 
+    // 19
+    //     let n = 51884; 
+    //     let d = 10;
+    //     let m = 0;
+    //     while ( n ) {
+    //         d = n % 10;
+    //         m = n % 10;
+    //         for (; n > 0 ;)  {
+    //         check = n % 10;
+    //         if ( check > m  && check > d ) {
+    //              m = check;
+    //         }
+    //         else if ( check < d && check < m) {
+    //             d = check;
+    //         }
+    //         n = Math.floor( n / 10);
+    //         }
+    //         console.log( d , m) 
+    //         }
+
+    // 20
+    //     let p = 50;
+    //     let i = 100000;
+    //     let s = 0;
+    //     let m = 0; 
+    //     for ( ; s < 100000; ) {
+    //         ++m;
+    //         s = i * ((1+ ( p / 100)) ** m );
+    //     }
+    //     console.log( m , s)
+
+    // 21
+    //     let z = 1;
+    //     let n = 0;
+    //     let m = 0;
+
+    //     for ( n; n < 10; ++n ) {
+    //         z = z * 2;
+    //     }
+    //     console.log(z)
+
+
+    //     while ( z < m / 2) {
+    //         ++n;
+    //         z = z * 2;
+    //      }    
+    //         console.log( n )
+       
+    22
         let d = 0;
-        let m = 0;
-        while ( n ) {
-            d = n % 10;
-            m = n % 10;
-            
-        } 
-
-
-
-        
-
+        let ml = 3;
+        let m = 1;
+        let n = 16;
+        while ( ml <= n ) {
+            n = n - ( ml + m * d); 
+            ++d;
+        }
+        console.log( "Sodininkas dirbs " + d + " dienas")
 
 
 
