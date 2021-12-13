@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 1 random Numbers 
+            let x = [];
+            for ( let y = 0; y < 30; ++y ) {
+                x[y] = Math.floor(Math.random() * (25 - 5)+5);
+            }
+            console.log(x)
+
+        // 2a  more than 10 
+            let s10 = 0;
+            for ( let y = 0; y < 30; ++y) {
+                if ( x[y] > 10) {
+                    ++s10;
+                }
+            }
+            console.log("More than 10 -------- " + s10);
+
+            // 2b  max value
+            let max = 0; maxi = [];
+            for ( let y = 0; y < 30; ++y) {
+                if (x[y] > max) {
+                    max = x[y];
+                } 
+            }
+            let i = 0; 
+            for (let y = 0; y < 30; ++y) {
+                if (max == x[y]) {
+                    maxi[i] = y;
+                    ++i;
+                }
+            } 
+            console.log("Max value----- " + max );
+            for (let y = 0; y < i; ++y) {
+            console.log(maxi[y]);
+            }
+
+            // 2c 
+            let ls = 0;
+            for ( let y = 0; y < 30; ++y) {
+                if ( y % 2 == 0 ) {
+                    ls += x[y]
+                }
+            }
+            console.log("Even summ ----- " + ls);
+
+            // 2d
+            let neww = [];
+            for (let y = 0; y < 30; ++y) {
+                neww[y] = x[y] - y; 
+            }
+            console.log("Neww - index"); 
+            for ( let y = 0; y < 30; ++y) {
+                console.log(y + " " + neww[y]);
+            }
+
+            // 2e
+            for (let y = 30; y < 40; ++y) {
+                x[y] = Math.floor(Math.random() * (25 - 4) + 5);
+            }
+            console.log("Plus 10 ");
+            for (let y = 0; y < 40; ++y) { 
+            }console.log(x)
+
+            // 2f
+            
+    </script>
+</body>
+</html>
