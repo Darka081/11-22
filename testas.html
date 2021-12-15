@@ -5,32 +5,151 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #Text {
+            border: 2px solid black;
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <div>
-            <p>Content: <input type="text"></p>
-        </div>
-        <div>
-            <p>Size:  <input type="text"> Style: <input type="checkbox"> Bold <input type="checkbox"> Italic <input type="checkbox"> Underline </p>
-        </div>
-        <div>
-            <p>Width: <input type="text"> Height: <input type="text"></p>
-        </div>
-        <div>
-            <p>Align: <input type="radio"> Left <input type="radio"> Middle  <input type="radio"> Right</p>
-        </div>
-        <div>
-            <p>Vertical: <input type="radio"> Top <input type="radio"> Middle <input type="radio"> Bottom </p>
-        </div>
-        <div>
-            <p>Text color: <input type="color"> Back Color: <input type="color"> Border color: <input type="color"> Size: <input type="range"> </p>
-        </div>
-        <div>
-            <p>Padding: <input type="range"></p>
-        </div>
+    <div id="Input">
+        <label for="Content">Content:</label>
+        <input type="text" id="Content" oninput="myFunction()">
+        <br>
+
+        <label for="Size">Size:</label>
+        <input type="number" id="Size" name="Size" value="" oninput="myFunction()">
+
+        <label for="Style">Style:</label>
+        <input type="radio" id="StyleBold" name="StyleBold" value="" oninput="myFunction()">
+        <label for="Bold">Bold</label>
+        <input type="radio" id="StyleItalic" name="StyleItalic" value="" oninput="myFunction()">
+        <label for="Italic">Italic</label>
+        <input type="radio" id="StyleUnderline" name="StyleUnderline" value="" oninput="myFunction()">
+        <label for="Underline">Underline</label>
+        <br>
+
+        <label for="Width">Width:</label>
+        <input type="number" id="Width" oninput="myFunction()" name="Width" value="">
+        <label for="Height">Height:</label>
+        <input type="number" id="Height" oninput="myFunction()" name="Height" value="">
+        <br>
+        
+        <label for="Align">Align:</label>
+        <input type="radio" id="AlignLeft" oninput="myFunction()" name="AlignLeft" value="Left">
+        <label for="Left">Left</label>
+        <input type="radio" id="AlignMiddle" oninput="myFunction()" name="AlignMiddle" value="Center">
+        <label for="Middle">Middle</label>
+        <input type="radio" id="AlignRight" oninput="myFunction()" name="AlignRight" value="Right">
+        <label for="Right">Right</label>
+        <br>
+
+        <label for="Vertical">Vertical:</label>
+        <input type="radio" id="VerticalTop" oninput="myFunction()" name="VerticalTop" value="Text-top">
+        <label for="Top">Top</label>
+        <input type="radio" id="VerticalMiddle" oninput="myFunction()" name="VerticalMiddle" value="Baseline">
+        <label for="Middle">Middle</label>
+        <input type="radio" id="VerticalBottom" oninput="myFunction()" name="VerticalBottom" value="Text-bottom">
+        <label for="Bottom">Bottom</label>
+        <br>
+
+        <label for="Textcolor">Text Color:</label>
+        <input type="color" id="TextColor" oninput="myFunction()" name="TextColor" value="#005555">
+        <label for="Back-Color">Back Color:</label>
+        <input type="color" id="BackColor" oninput="myFunction()" name="BackColor" value="#FF88FF">
+        <label for="BorderColor">Border Color</label>
+        <input type="color" id="BorderColor" oninput="myFunction()" name="BorderColor" value="#000440">
+        <br>
+
+        <label for="BorderSize">Size:</label>
+        <input type="range" id="BorderSize" oninput="myFunction()" name="BorderSize" value="">
+        <label for="Padding">Padding:</label>
+        <input type="range" id="PaddingSize" oninput="myFunction()" name="PaddingSize" value="">
+        <br>
+
+    </div>
+    <div id="Box">
+        <div id="Text"></div>
     </div>
     <script>
+        function myFunction() {
+            let Content = document.getElementById("Content").value;
+            document.getElementById("Text").innerHTML = Content; 
+            let box = document.getElementById("Text").style;
+            let TextSize = document.getElementById("Size").value;
+            let TextStyleB = document.getElementById("StyleBold").value;
+            let TextStyleI = document.getElementById("StyleItalic").value;
+            let TextStyleU = document.getElementById("StyleUnderline").value;
+            let TextWidth = document.getElementById("Width").value;
+            let TextHeight = document.getElementById("Height").value;
+            let TextAlignL = document.getElementById("AlignLeft").value;
+            let TextAlignM = document.getElementById("AlignMiddle").value;
+            let TextAlignR = document.getElementById("AlignRight").value;
+            let TextVerticalT = document.getElementById("VerticalTop").value;
+            let TextVerticalM = document.getElementById("VerticalMiddle").value;
+            let TextVerticalB = document.getElementById("VerticalBottom").value;
+            let TextColor = document.getElementById("TextColor").value;
+            let BackColor = document.getElementById("BackColor").value;
+            let BorderColor = document.getElementById("BorderColor").value;
+            let BorderSize = document.getElementById("BorderSize").value;
+            let PaddingSize = document.getElementById("PaddingSize").value;
+
+                box.fontSize = TextSize + "px" ;
+                box.fontWeight = TextStyleB + "Bold";
+                box.fontStyle = TextStyleI + " ";
+                box.textDecoration = TextStyleU + " ";
+                box.width = TextWidth ;
+                box.height = TextHeight ;
+                box.textAlign = TextAlignL;
+                box.textAlign = TextAlignM;
+                box.textAlign = TextAlignR;
+                box.verticalAlign = TextVerticalT;
+                box.verticalAlign = TextVerticalM;
+                box.verticalAlign = TextVerticalB;
+                box.color = TextColor;
+                box.backgroundColor = BackColor;
+                box.borderColor = BorderColor;
+                box.borderWidth = BorderSize;
+                box.padding = PaddingSize;
+
+
+                console.log("ar viskas veikia?")
+        }
     </script>
 </body>
 </html>
+
+
+
+
+
+<!-- 
+
+<div>
+    <div>
+        <p>Content: <input type="text"></p>
+    </div>
+    <div>
+        <p> Size:  <input type="text">
+            Style: <input type="checkbox"> 
+            Bold <input type="checkbox"> 
+            Italic <input type="checkbox"> 
+            Underline 
+        </p>
+    </div>
+    <div>
+        <p>Width: <input type="text"> Height: <input type="text"></p>
+    </div>
+    <div>
+        <p>Align: <input type="radio"> Left <input type="radio"> Middle  <input type="radio"> Right</p>
+    </div>
+    <div>
+        <p>Vertical: <input type="radio"> Top <input type="radio"> Middle <input type="radio"> Bottom </p>
+    </div>
+    <div>
+        <p>Text color: <input type="color"> Back Color: <input type="color"> Border color: <input type="color"> Size: <input type="range"> </p>
+    </div>
+    <div>
+        <p>Padding: <input type="range"></p>
+    </div>
+</div> -->
